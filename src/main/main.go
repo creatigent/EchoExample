@@ -1,17 +1,11 @@
 package main
 
 import (
-    "github.com/labstack/echo"
-    "net/http"
+    "router"
 )
 
-func hello(c echo.Context) error {
-    return c.String(http.StatusOK, "hello")
-}
-
 func main() {
-    e := echo.New()
-    e.GET("/", hello)
+    e := router.New()
 
     e.Start(":1323")
 }
